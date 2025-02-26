@@ -1,46 +1,179 @@
-.container {
-    display: block;
-    margin-top: 15%;
-    text-align: center;
+/* Base styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.text-title {
-    display: inline-block;
+
+body {
     font-family: 'Work Sans', sans-serif;
-    vertical-align: middle;
+    line-height: 1.6;
     color: whitesmoke;
-    font-size: 50pt;
-    font-weight: 100;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
 }
-.icons {
-    display: inline-block;
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 5px;
+
+body.loaded {
+    opacity: 1;
 }
-.icons:hover {
-    -webkit-filter: brightness(90%);
-    -moz-filter: brightness(90%);
-    -o-filter: brightness(90%);
-    -ms-filter: brightness(90%);
-    filter: brightness(90%);
-}
+
+/* Background styling */
 .bg {
-    background: url('../images/bg1.jpg');
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    -o-background-size: cover;
+    background: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    filter: blur(3px);
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1;
+    transform: scale(1.05); /* Prevents blur edges from showing */
+}
+
+/* Container layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Header styles */
+header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.avatar {
+    border-radius: 25%;
+    width: 200px;
+    max-width: 80%;
+    filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+/* Social links section */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.fa-gradient {
+    background: linear-gradient(165deg, rgba(212, 175, 55, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(241, 175, 9, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.7));
+}
+
+.icon-label {
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover .icon-label {
+    opacity: 1;
+}
+
+/* About section */
+.about-section {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-section h2 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .social-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-icon i {
+        font-size: 2rem;
+    }
 }

@@ -1,97 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="google" content="notranslate"> <!--Stop google translate from offering to translate from German(?). Possibly temporary.-->
-
 <head>
-    <!-- Font awesome (For logos)  -->
-    <script src="https://kit.fontawesome.com/ab68e071ce.js"></script>
-    <link rel="icon" href="assets/images/avatar_transparent_large.png" sizes="32x32" type="image/png"/>
-    <style>
-        .container {
-            display: block;
-            text-align: center;
-            margin: 10% auto auto;
-        }
-
-
-        .img {
-            border-radius: 25%;
-            display: block;
-            margin: -1.5% auto 2%;
-            width: 20%;
-            filter: drop-shadow(0 0 0.25rem);
-        }
-
-        .modal {
-            display: inline-table;
-        }
-
-        /* Adds labels to the link icons
-        .modal.name {
-            font-family: 'Work Sans', sans-serif;
-            color: black;
-        }
-         */
-
-        .modal.icon {
-            padding: 5px;
-            color: #d4af37;
-        }
-
-        .modal.icon:hover i {
-            filter: brightness(85%);
-        }
-
-        .fa-gradient {
-            background: linear-gradient(165deg, rgba(212, 175, 55, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(241, 175, 9, 1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .bg {
-            background: url("./assets/images/background.jpg");
-            -webkit-filter: blur(2px);
-            -ms-filter: blur(2px);
-            filter: blur(2px);
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    </style>
-    <title>Erkums</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta name="description" content="Ethan (Erkums) - Personal Portfolio">
+    
+    <!-- Font awesome (For logos) -->
+    <script src="https://kit.fontawesome.com/ab68e071ce.js" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="assets/images/avatar_transparent_large.png" sizes="32x32" type="image/png"/>
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+    <title>Ethan | Erkums</title>
 </head>
 
 <body>
+    <div class="bg"></div>
+    
+    <main class="container">
+        <header>
+            <h1 class="title">Ethan | Erkums</h1>
+            <img src="assets/images/avatar_transparent_large.png" class="avatar" alt="Erkums Avatar"/>
+        </header>
+        
+        <section class="social-links">
+            <a class="social-icon" href="https://twitter.com/Erkums" aria-label="Twitter Profile">
+                <i class="fab fa-twitter fa-gradient"></i>
+                <span class="icon-label">Twitter</span>
+            </a>
+            <a class="social-icon" href="https://github.com/Erkums" aria-label="GitHub Profile">
+                <i class="fab fa-github fa-gradient"></i>
+                <span class="icon-label">GitHub</span>
+            </a>
+            <a class="social-icon" href="https://lunar.gg" aria-label="Lunar Website">
+                <i class="fas fa-moon fa-gradient"></i>
+                <span class="icon-label">Lunar</span>
+            </a>
+            <a class="social-icon" href="https://twitter.com/SkullPartyNFT" aria-label="Skull Party NFT">
+                <i class="fas fa-skull fa-gradient"></i>
+                <span class="icon-label">Skull Party</span>
+            </a>
+        </section>
+        
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I'm a developer passionate about creating unique digital experiences.</p>
+            <p>Check out my projects and connect with me through the links above.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> Ethan | Erkums</p>
+    </footer>
 
-<div class="container">
-    <h1 style="font-size: 54px; color: azure; font-family: 'Courier New',serif">Ethan | Erkums</h1>
-    <img src="assets/images/avatar_transparent_large.png" class="img"/>
-    <div class="modal">
-        <div>
-            <a class="modal icon " href="https://twitter.com/Erkums">
-                <i class="fab fa-twitter fa-gradient fa-4x"></i>
-            </a>
-            <a class="modal icon" href="https://github.com/Erkums">
-                <i class="fab fa-github fa-gradient fa-4x"></i>
-            </a>
-            <a class="modal icon" href="https://lunar.gg">
-                <i class="fas fa-moon fa-gradient fa-4x"></i>
-            </a>
-            <a class="modal icon" href="https://twitter.com/SkullPartyNFT">
-                <i class="fas fa-skull fa-gradient fa-4x"></i>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="bg"></div>
+    <script>
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Add simple fade-in animation for page elements
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
-
 </html>
