@@ -104,6 +104,7 @@ header {
 .fa-gradient {
     background: linear-gradient(165deg, rgba(212, 175, 55, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(241, 175, 9, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.7));
 }
@@ -125,6 +126,7 @@ header {
     border-radius: 10px;
     max-width: 600px;
     width: 100%;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
